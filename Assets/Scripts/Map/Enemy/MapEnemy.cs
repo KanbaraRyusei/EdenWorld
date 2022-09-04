@@ -2,18 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody), typeof(Collision))]
 public class MapEnemy : MonoBehaviour, IBattleable
 {
     [SerializeField]
     [Header("遷移するバトルシーン名")]
     string _battleSceneName;
-
-    Collider _collider;
-
-    void Awake()
-    {
-        _collider = GetComponent<CapsuleCollider>();
-    }
 
     public void Battle()
     {
